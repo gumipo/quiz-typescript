@@ -73,7 +73,7 @@ const Mistake = () => {
           </StyledCommentaryNav>
         </StyledCommentary>
         <Button
-          fill="true"
+          fill={true}
           label="もう一度クイズに挑戦する"
           onClick={() => {
             dispatch(resetChoicesAction());

@@ -13,7 +13,7 @@ import {
   getQuizChoices,
   getQuizAnswer,
   getSelectedAnswer,
-} from "../Redux/Quiz/selector";
+} from "../reducks/Quiz/selector";
 import { resetChoicesAction } from "../Redux/Quiz/actions";
 
 const Correct = () => {

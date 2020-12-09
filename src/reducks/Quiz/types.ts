@@ -1,4 +1,4 @@
-export type Quiz = {
+export type QuizState = {
   title: string;
   id: number;
   description: string;
@@ -6,7 +6,7 @@ export type Quiz = {
 
 export type QuizzesState = {
   id: number[];
-  choices: Quiz[];
-  answer: Quiz[];
+  choices: QuizState[];
+  answer: QuizState[];
   selectAnswer: string;
 };

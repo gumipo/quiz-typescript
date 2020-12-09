@@ -1,4 +1,5 @@
 import { QuizzesState } from "./types";
+import { QuizState } from "./types";
 
 export const FETCH_QUIZZES_ID = "FETCH_QUIZZES_ID";
 export const fetchQuizzesIdAction = (id: number[]) => {
@@ -9,7 +10,7 @@ export const fetchQuizzesIdAction = (id: number[]) => {
 };
 
 export const FETCH_RANDOM_CHOICES = "FETCH_RANDOM_CHOICES";
-export const fetchRandomChoicesAction = (choices: QuizzesState) => {
+export const fetchRandomChoicesAction = (choices: QuizState[]) => {
   return {
     type: "FETCH_RANDOM_CHOICES",
     payload: choices,
@@ -25,7 +26,7 @@ export const resetChoicesAction = () => {
 };
 
 export const FETCH_RANDOM_ANSWER = "FETCH_RANDOM_ANSWER";
-export const fetchRandomAnswerAction = (answer: QuizzesState) => {
+export const fetchRandomAnswerAction = (answer: QuizState[]) => {
   return {
     type: "FETCH_RANDOM_ANSWER",
     payload: answer,

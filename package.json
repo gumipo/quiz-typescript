@@ -15,7 +15,6 @@
     "@types/react-redux": "^7.1.11",
     "@types/react-router-dom": "^5.1.6",
     "@types/styled-components": "^5.1.4",
-    "@types/twemoji": "^12.1.1",
     "axios": "^0.21.0",
     "connected-react-router": "^6.8.0",
     "firebase": "^8.1.1",

@@ -5,9 +5,8 @@ import {
   compose,
 } from "redux";
 import thunk from "redux-thunk";
-import * as History from "history";
+import * as H from "history";
 
-//import react-router
 import { connectRouter, routerMiddleware } from "connected-react-router";
 
 //reducer
@@ -16,7 +15,7 @@ import { connectRouter, routerMiddleware } from "connected-react-router";
 const composeEnhancers =
   (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-export default function createStore(history: any) {
+export default function createStore(history: H.History) {
   return reduxCreateStore(
     combineReducers({
       router: connectRouter(history),

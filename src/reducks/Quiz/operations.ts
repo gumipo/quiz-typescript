@@ -1,3 +1,4 @@
+import { StoreState } from "./../Store/types";
 import { Dispatch } from "redux";
 import axios from "axios";
 import {
@@ -22,7 +23,7 @@ export const fetchQuizzesId = () => {
 };
 
 export const randomQuizzesSet = () => {
-  return async (dispatch: Dispatch, getState) => {
+  return async (dispatch: Dispatch, getState: () => StoreState) => {
     const RANDOM_COUNT = 4;
     const ANSEWR_RANDOM_COUNT = 1;
     const quizzesId = getState().quizzes.id;
@@ -38,7 +39,7 @@ export const randomQuizzesSet = () => {
   };
 };
 
-const getDataByRandomIds = async (randomIds) => {
+const getDataByRandomIds = async (randomIds: number[]) => {
   const ret = [];
   for (let i = 0; i < randomIds.length; i++) {
     let data = await getDataById(randomIds[i]);
@@ -47,7 +48,7 @@ const getDataByRandomIds = async (randomIds) => {
   return ret;
 };
 
-const getDataById = async (id: number[]) => {
+const getDataById = async (id: number) => {
   const url = `https://uxdaystokyo.com/glossary-app-api/GlossaryDetail.php?glossary-id=${id}`;
   const res = axios
     .get(url)
@@ -60,7 +61,7 @@ const getDataById = async (id: number[]) => {
   return res;
 };
 
-const randomSelect = (array, num: number) => {
+const randomSelect = (array: any, num: number) => {
   let newArray = [];
   while (newArray.length < num && array.length > 0) {
     const rand = Math.floor(Math.random() * array.length);

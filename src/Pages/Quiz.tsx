@@ -11,6 +11,7 @@ import {
 import { randomQuizzesSet, fetchQuizzesId } from "../reducks/Quiz/operations";
 import { selectedAnswerAction } from "../reducks/Quiz/actions";
 import Loading from "../Component/Loading";
+import { QuizState } from "../reducks/Quiz/types";
 
 const Quiz: React.FC = () => {
   const history = useHistory();
@@ -25,7 +26,7 @@ const Quiz: React.FC = () => {
     const selectAnswer = choices[index].title;
     dispatch(selectedAnswerAction(selectAnswer));
 
-    if (choices[index].ID === answer.ID) {
+    if (selectAnswer === answer.title) {
       history.push("/correct");
     } else {
       history.push("/mistake");
@@ -68,6 +69,7 @@ const Quiz: React.FC = () => {
               {choices.length > 0 &&
                 choices.map((choice, index: number) => (
                   <Button
+                    fill={true}
                     key={index}
                     label={choice.title}
                     onClick={() => resultJudgment(index)}
