@@ -1,6 +1,5 @@
 import { createSelector } from "reselect";
 import { DefaultRootState } from "react-redux";
-import { Quiz } from "./types";
 
 const quizzesSelector = (state: DefaultRootState) => state.quizzes;
 

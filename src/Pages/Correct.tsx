@@ -6,7 +6,7 @@ import Card from "../Component/UIkit/Card";
 import smile from "../assets/Image/smile.svg";
 import sparkle from "../assets/Image/sparkle.svg";
 import sparkleMedium from "../assets/Image/sparkle-medium.svg";
-import Twemoji from "react-twemoji";
+// import Twemoji from "react-twemoji";
 import Button from "../Component/UIkit/Button";
 import Footer from "../Component/Footer/Footer";
 import {
@@ -39,9 +39,9 @@ const Correct: React.FC = () => {
       <StyledCorrect>
         <StyledBackground />
         <StyledCorrectTitle>
-          <Twemoji options={{ className: "twemoji" }}>🥳</Twemoji>
+          {/* <Twemoji options={{ className: "twemoji" }}>🥳</Twemoji>
           <h1>正解</h1>
-          <Twemoji options={{ className: "twemoji" }}>🎉</Twemoji>
+          <Twemoji options={{ className: "twemoji" }}>🎉</Twemoji> */}
         </StyledCorrectTitle>
         <Card
           title={answer.title}

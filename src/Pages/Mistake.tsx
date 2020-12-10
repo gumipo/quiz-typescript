@@ -6,7 +6,7 @@ import Card from "../Component/UIkit/Card";
 import sad from "../assets/Image/sad.svg";
 import decoration from "../assets/Image/decoration.svg";
 import decorationMedium from "../assets/Image/decorationMedium.svg";
-import Twemoji from "react-twemoji";
+// import Twemoji from "react-twemoji";
 import Button from "../Component/UIkit/Button";
 import Footer from "../Component/Footer/Footer";
 import {
@@ -39,9 +39,9 @@ const Mistake: React.FC = () => {
       <StyledMistake>
         <StyledBackground />
         <StyledMistakeTitle>
-          <Twemoji options={{ className: "twemoji" }}>😭</Twemoji>
+          {/* <Twemoji options={{ className: "twemoji" }}>😭</Twemoji>
           <h1>不正解</h1>
-          <Twemoji options={{ className: "twemoji" }}>😭</Twemoji>
+          <Twemoji options={{ className: "twemoji" }}>😭</Twemoji> */}
         </StyledMistakeTitle>
         <Card
           title={answer.title}
