@@ -17,7 +17,7 @@ import {
 import { resetChoicesAction } from "../reducks/Quiz/actions";
 import { Quiz } from "../reducks/Quiz/types";
 
-const Correct = () => {
+const Correct: React.FC = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const selector = useSelector((state) => state);

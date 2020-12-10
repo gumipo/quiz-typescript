@@ -2,7 +2,7 @@ const initialState = {
   quizzes: {
     id: [],
     choices: [],
-    answer: [],
+    answer: {},
     selectAnswer: "",
   },
 };
