@@ -1,30 +1,32 @@
-import * as Actions from "./actions";
+import { ActionTypes, Actions } from "./actions";
 import initialState from "../Store/intialState";
-import { QuizzesState } from "./types";
 
-export const QuizzesReducer = (state = initialState.quizzes, action) => {
+export const QuizzesReducer = (
+  state = initialState.quizzes,
+  action: Actions
+) => {
   switch (action.type) {
-    case Actions.FETCH_QUIZZES_ID:
+    case ActionTypes.FETCH_QUIZZES_ID:
       return {
         ...state,
         id: [...action.payload],
       };
-    case Actions.FETCH_RANDOM_CHOICES:
+    case ActionTypes.FETCH_RANDOM_CHOICES:
       return {
         ...state,
         choices: [...action.payload],
       };
-    case Actions.FETCH_RANDOM_ANSWER:
+    case ActionTypes.FETCH_RANDOM_ANSWER:
       return {
         ...state,
         answer: action.payload,
       };
-    case Actions.RESET_CHOICES:
+    case ActionTypes.RESET_CHOICES:
       return {
         ...state,
         choices: action.payload,
       };
-    case Actions.SELECTED_ANSWER:
+    case ActionTypes.SELECTED_ANSWER:
       return {
         ...state,
         selectAnswer: action.payload,

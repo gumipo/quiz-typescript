@@ -17,6 +17,7 @@ const Loading: React.FC = () => {
         </StyledButtonDummyUpperRow>
         <StyledButtonDummyLowerRow>
           <Button fill={true} />
+          <Button fill={true} />
         </StyledButtonDummyLowerRow>
       </StyledQuizWrap>
     </StyledSection>

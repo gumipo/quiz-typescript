@@ -15,6 +15,7 @@ import {
   getSelectedAnswer,
 } from "../reducks/Quiz/selector";
 import { resetChoicesAction } from "../reducks/Quiz/actions";
+import { Quiz } from "../reducks/Quiz/types";
 
 const Mistake = () => {
   const history = useHistory();
@@ -24,11 +25,11 @@ const Mistake = () => {
   const answer = getQuizAnswer(selector);
   const selectAnswer = getSelectedAnswer(selector);
 
-  const [commentaries, setCommentaries] = useState([]);
+  const [commentaries, setCommentaries] = useState<Quiz[]>([]);
 
   useEffect(() => {
     const commentaryTitle = choices.filter(
-      (item) => item.title !== answer.title
+      (item: Quiz) => item.title !== answer.title
     );
     setCommentaries(commentaryTitle);
   }, []);

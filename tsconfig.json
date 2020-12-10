@@ -1,6 +1,13 @@
 {
   "compilerOptions": {
+     "baseUrl": "src/@types",
+    "paths": {
+      "react-twemoji": [
+        "react-twemoji.d.ts"
+      ]
+    },
     "target": "es5",
+    "downlevelIteration": true,
     "lib": [
       "dom",
       "dom.iterable",

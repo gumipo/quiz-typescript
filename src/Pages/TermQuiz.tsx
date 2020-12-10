@@ -11,9 +11,9 @@ import {
 import { randomQuizzesSet, fetchQuizzesId } from "../reducks/Quiz/operations";
 import { selectedAnswerAction } from "../reducks/Quiz/actions";
 import Loading from "../Component/Loading";
-import { QuizState } from "../reducks/Quiz/types";
+import { Quiz } from "../reducks/Quiz/types";
 
-const Quiz: React.FC = () => {
+const TermQuiz: React.FC = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const selector = useSelector((state) => state);
@@ -67,9 +67,9 @@ const Quiz: React.FC = () => {
             </StyledDescriptionArea>
             <StyledButtonArea>
               {choices.length > 0 &&
-                choices.map((choice, index: number) => (
+                choices.map((choice: Quiz, index: number) => (
                   <Button
-                    fill={true}
+                    fill={false}
                     key={index}
                     label={choice.title}
                     onClick={() => resultJudgment(index)}
@@ -82,7 +82,7 @@ const Quiz: React.FC = () => {
     </>
   );
 };
-export default Quiz;
+export default TermQuiz;
 
 const StyledSection = styled.section`
   width: 100%;

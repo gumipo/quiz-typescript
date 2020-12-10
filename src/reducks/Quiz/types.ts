@@ -1,12 +1,8 @@
-export type QuizState = {
-  title: string;
-  id: number;
+export interface Quiz {
+  ID: string;
   description: string;
-};
+  title: string;
+  url: string;
+}
 
-export type QuizzesState = {
-  id: number[];
-  choices: QuizState[];
-  answer: QuizState[];
-  selectAnswer: string;
-};
+// export interface QuizList extends Array<Quiz> {}

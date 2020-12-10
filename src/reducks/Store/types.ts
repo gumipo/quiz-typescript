@@ -2,9 +2,9 @@ import "react-redux";
 import { RouterState } from "connected-react-router";
 export type StoreState = {
   quizzes: {
-    id: number[];
-    choices: [];
-    answer: [];
+    id: string[];
+    choices: any;
+    answer: any;
     selectAnswer: string;
   };
   router: RouterState;

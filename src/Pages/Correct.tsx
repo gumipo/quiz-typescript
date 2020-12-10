@@ -14,7 +14,8 @@ import {
   getQuizAnswer,
   getSelectedAnswer,
 } from "../reducks/Quiz/selector";
-import { resetChoicesAction } from "../Redux/Quiz/actions";
+import { resetChoicesAction } from "../reducks/Quiz/actions";
+import { Quiz } from "../reducks/Quiz/types";
 
 const Correct = () => {
   const history = useHistory();
@@ -24,11 +25,11 @@ const Correct = () => {
   const answer = getQuizAnswer(selector);
   const selectAnswer = getSelectedAnswer(selector);
 
-  const [commentaries, setCommentaries] = useState([]);
+  const [commentaries, setCommentaries] = useState<Quiz[]>([]);
 
   useEffect(() => {
     const commentaryTitle = choices.filter(
-      (item) => item.title !== answer.title
+      (item: Quiz) => item.title !== answer.title
     );
     setCommentaries(commentaryTitle);
   }, []);
@@ -74,10 +75,10 @@ const Correct = () => {
         </StyledCommentary>
 
         <Button
-          fill="true"
+          fill={true}
           label="次の問題に挑戦する"
           onClick={() => {
-            dispatch(resetChoicesAction([]));
+            dispatch(resetChoicesAction());
             history.push("/quiz");
           }}
         />
