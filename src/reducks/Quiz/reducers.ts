@@ -9,12 +9,12 @@ export const QuizzesReducer = (
     case ActionTypes.FETCH_QUIZZES_ID:
       return {
         ...state,
-        id: [...action.payload],
+        id: [action.payload],
       };
     case ActionTypes.FETCH_RANDOM_CHOICES:
       return {
         ...state,
-        choices: [...action.payload],
+        choices: [action.payload],
       };
     case ActionTypes.FETCH_RANDOM_ANSWER:
       return {
